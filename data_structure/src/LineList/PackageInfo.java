@@ -1,4 +1,4 @@
-package data_structure.src.code;
+package data_structure.src.LineList;
 
 import java.util.Collection;
 import java.util.Iterator;
