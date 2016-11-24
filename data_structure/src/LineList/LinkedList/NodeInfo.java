@@ -2,6 +2,7 @@ package data_structure.src.LineList.LinkedList;
 
 /**
  * Created by Administrator on 2016/11/24.
+ * this implement is change to inner static class
  */
 public class NodeInfo<E> implements INode {
 
