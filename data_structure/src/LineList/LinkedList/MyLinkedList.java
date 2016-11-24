@@ -123,18 +123,38 @@ public class MyLinkedList<E>
 
     @Override
     public E get(int index) {
-        return null;
+        checkOutOfBound(index);
+        for(int i=0;;i++){
+            head = head.next;
+            if(i == index){
+                return head.item;
+            }
+        }
     }
-
+    protected void checkOutOfBound(int index){
+        if (index > size || index > 0){
+            throw new IndexOutOfBoundsException("越界");
+        }
+    }
     @Override
     public E set(int index, E element) {
-        return null;
+        checkOutOfBound(index);
+        for(int i=0;;i++){
+            head = head.next;
+            if(i == index){
+                return head.item;
+            }
+        }
     }
 
     @Override
     public void add(int index, E element) { //index is'not userful ,for LinkedList
         addIsNull(index, element);
-
+        for (int i = 0;head.next!=null;i++){
+            head = head.next;
+        }
+        new Node(element,head,null);
+        size++;
     }
 
 
@@ -147,7 +167,13 @@ public class MyLinkedList<E>
 
     @Override
     public E remove(int index) {
-        return null;
+        checkOutOfBound(index);
+        for(int i =0;;i++){
+            head = head.next;
+            if (i == index) {
+                head.next = head.next.next;
+            }
+        }
     }
 
     @Override
