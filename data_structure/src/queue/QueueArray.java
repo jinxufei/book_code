@@ -44,12 +44,16 @@ public class QueueArray implements Queue{
 
     @Override
     public Object dequeue() throws QueueEmptyException {
-        return null;
+        if (size<=0) throw new QueueEmptyException("隊列中沒元素");
+        Object o = objects[size];
+        objects[size--] = null;
+        return o;
     }
 
     @Override
     public Object peek() throws QueueEmptyException {
-        return null;
+        if (size<=0) throw new QueueEmptyException("队列中没元素");
+        return objects[size];
     }
 
 }
