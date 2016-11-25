@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 /**
- * Created by Administrator on 2016/11/23.]
+ * Created by jinxufei on 2016/11/23.]
  * This is packageInfo ,this package will implement PackageInfo
  * As follow, we can know List interface contains those methods need to implement
  */

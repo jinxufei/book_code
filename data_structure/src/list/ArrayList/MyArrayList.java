@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * Created by Administrator on 2016/11/23.
+ * Created by jinxufei on 2016/11/23.
  */
 public class MyArrayList extends AbstractList implements List, Serializable {
 

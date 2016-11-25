@@ -8,7 +8,7 @@ import java.util.function.UnaryOperator;
 import java.util.stream.Stream;
 
 /**
- * Created by Administrator on 2016/11/24.
+ * Created by jinxufei on 2016/11/24.
  * tip:
  *
  */

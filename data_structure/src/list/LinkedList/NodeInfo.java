@@ -1,7 +1,7 @@
 package data_structure.src.list.LinkedList;
 
 /**
- * Created by Administrator on 2016/11/24.
+ * Created by jinxufei on 2016/11/24.
  * this implement is change to inner static class
  */
 public class NodeInfo<E> implements INode {

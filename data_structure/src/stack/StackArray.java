@@ -5,7 +5,7 @@ import data_structure.src.stack.exception.StackEmptyException;
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2016/11/25.
+ * Created by jinxufei on 2016/11/25.
  * implement by Array
  */
 public class StackArray implements Stack,Serializable{

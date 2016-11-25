@@ -3,7 +3,7 @@ package data_structure.src.stack;
 import data_structure.src.stack.exception.StackEmptyException;
 
 /**
- * Created by Administrator on 2016/11/25.
+ * Created by jinxufei on 2016/11/25.
  */
 public interface Stack {
 
