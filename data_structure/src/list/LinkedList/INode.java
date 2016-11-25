@@ -1,4 +1,4 @@
-package data_structure.src.LineList.LinkedList;
+package data_structure.src.list.LinkedList;
 
 /**
  * Created by Administrator on 2016/11/24.

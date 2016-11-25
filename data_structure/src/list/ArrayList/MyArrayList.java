@@ -1,4 +1,4 @@
-package data_structure.src.LineList.ArrayList;
+package data_structure.src.list.ArrayList;
 
 import java.io.Serializable;
 import java.util.*;

@@ -1,4 +1,4 @@
-package data_structure.src.LineList.LinkedList;
+package data_structure.src.list.LinkedList;
 
 import java.io.Serializable;
 import java.util.*;
