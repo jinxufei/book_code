@@ -75,6 +75,16 @@ public class Node implements Serializable,INode {
         return !hasParent()&&!hasRightChild();
     }
 
+    @Override
+    public boolean isLeftChild() {
+        return parentNode.getLeftNode()==leftNode;
+    }
+
+    @Override
+    public boolean isRightChild() {
+        return parentNode.getRightNode()==rightNode;
+    }
+
 
     @Override
     public String toString() {

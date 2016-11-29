@@ -13,4 +13,8 @@ public interface INode {
     boolean hasRightChild();
     //是否有叶子节点
     boolean isLeaf();
+    //是否是左孩子
+    boolean isLeftChild();
+    //是否是右孩子
+    boolean isRightChild();
 }

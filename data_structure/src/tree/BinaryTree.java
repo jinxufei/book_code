@@ -28,6 +28,31 @@ public class BinaryTree implements Tree{
         return size;
     }
 
+    public void updateSize(){
+ /*       node = getRoot(node);
+        int size = 1;
+        if (node.hasLeftChild()){
+            size++;
+            node = node.getLeftNode();
+        }
+        node = getRoot(node);
+        if (node.hasRightChild()){
+            size++;
+            node = node.getRightNode();
+        }*/
+        size = 1;
+        if (node.hasLeftChild()) {
+            size += size;
+            node = node.getLeftNode();
+        }
+        if (node.hasRightChild()){
+            size += size;
+            node = node.getRightNode();
+        }
+        if (node.hasParent()){
+            updateSize();
+        }
+    }
     @Override
     public Node getRoot(Node n) {
         if (node.hasParent()){
@@ -44,7 +69,14 @@ public class BinaryTree implements Tree{
         }
         return null;
     }
-
+    /**break connection with this node's parent*/
+    public void breakParent(){
+        if (!node.hasParent()) return;
+        if (node.isLeftChild()) node.getParentNode().setLeftNode(null);
+        if (node.isRightChild())node.getParentNode().setRightNode(null);
+        updateSize();
+        updateHeight();
+    }
     @Override
     public Node getFirstChild() {
         return null;
@@ -60,7 +92,19 @@ public class BinaryTree implements Tree{
         return height;
     }
 
+    public void updateHeight(){
+        int h = 0;
+        if (node.hasLeftChild()){
+            Math.max(h,height);
+        }
+        if (node.hasRightChild()){
+            Math.max(h,height);
+        }
+        height = h;
+        if(node.hasParent())
+            updateHeight();
 
+    }
     @Override
     public void insertChild(Node node, Node child) {
 
