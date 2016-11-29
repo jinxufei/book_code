@@ -69,8 +69,15 @@ public class BinaryTree implements Tree{
         }
         return null;
     }
-    /**break connection with this node's parent*/
-    public void breakParent(){
+    /**
+     * break connection with this node's parent
+     * first ,you should determine whether this node has parent
+     * second,you should determine whether this node is  parent's leftchild ,
+     * just set parent's leftchild to null.
+     * the rightNode too.
+     * don't forget to update the tree's size and height
+     * */
+    public void breakParent(Node node){
         if (!node.hasParent()) return;
         if (node.isLeftChild()) node.getParentNode().setLeftNode(null);
         if (node.isRightChild())node.getParentNode().setRightNode(null);
@@ -79,6 +86,7 @@ public class BinaryTree implements Tree{
     }
     @Override
     public Node getFirstChild() {
+
         return null;
     }
 
@@ -92,8 +100,32 @@ public class BinaryTree implements Tree{
         return height;
     }
 
+    @Override
+    public void setLeftChild(Node n) {
+        Node oldNode = node;
+        if (oldNode.hasLeftChild()) breakParent(oldNode);
+        setCommon(n);
+    }
+
+    @Override
+    public void setRightChild(Node n) {
+        Node oldNode = node;
+        if (oldNode.hasRightChild()) breakParent(oldNode);
+        setCommon(n);
+    }
+    //set leftchild and rightchild's common method
+    private void setCommon(Node n){
+        if (n!=null){
+            breakParent(n);
+            node = n;
+            n.setParentNode(node);
+            updateHeight();
+            updateSize();
+        }
+    }
     public void updateHeight(){
         int h = 0;
+
         if (node.hasLeftChild()){
             Math.max(h,height);
         }
@@ -105,8 +137,19 @@ public class BinaryTree implements Tree{
             updateHeight();
 
     }
+
     @Override
     public void insertChild(Node node, Node child) {
+
+    }
+
+    @Override
+    public void insertLeftChild(Node n) {
+
+    }
+
+    @Override
+    public void insertRightChild(Node n) {
 
     }
 

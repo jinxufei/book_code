@@ -13,7 +13,11 @@ public interface Tree {
     Node getFirstChild();
     Node getNextSibling(Node node);
     int getHeight();
+    void setLeftChild(Node node);
+    void setRightChild(Node node);
     void insertChild(Node node,Node nodex);
+    void insertLeftChild(Node node);
+    void insertRightChild(Node node);
     void deleteChild(Node node,int i);
 
     Iterator preOrder(Node node);
