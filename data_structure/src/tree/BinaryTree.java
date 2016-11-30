@@ -160,6 +160,7 @@ public class BinaryTree implements Tree{
 
     @Override
     public Iterator preOrder(Node node) {
+
         return null;
     }
 
