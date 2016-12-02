@@ -1,6 +1,9 @@
 package data_structure.src.tree;
 
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by jinxufei on 2016/11/28.
@@ -160,18 +163,62 @@ public class BinaryTree implements Tree{
 
     @Override
     public Iterator preOrder(Node node) {
-
-        return null;
+        LinkedList<Node> list = new LinkedList<>();
+        preOrderRecursion(node,list);
+        return list.iterator();
     }
-
+    private void preOrderRecursion(Node n,LinkedList<Node> list){
+        if (n==null)  return;
+        list.addLast(n);
+        preOrderRecursion(n.getLeftNode(),list);
+        preOrderRecursion(n.getRightNode(),list);
+    }
     @Override
     public Iterator postOrder(Node node) {
-        return null;
+        LinkedList<Node> list = new LinkedList<>();
+        postOrderRecursion(node,list);
+        return list.iterator();
     }
+
+    private void postOrderRecursion(Node n,LinkedList<Node> list) {
+        if (n == null) return;
+        preOrderRecursion(n.getLeftNode(),list);
+        list.addLast(n);
+        preOrderRecursion(n.getRightNode(),list);
+      }
 
     @Override
     public Iterator levelOrder(Node node) {
-        return null;
+        List<Node> list = new LinkedList<Node>();
+        levelOrderRecursion(node,list);
+        return list.iterator();
     }
 
+    private void levelOrderRecursion(Node n, List list) {
+        if (n == null)  return;
+        levelOrderRecursion(n.getLeftNode(),list);
+        levelOrderRecursion(n.getRightNode(),list);
+        list.add(n.getObject());
+    }
+   /* //非递归方法遍历
+    public Iterator preOrderGeneric(Node n){
+        List<Node> list = new LinkedList<>();
+        preOrderGernric(n,list);
+        return list.iterator();
+    }
+
+   *//* private void preOrderGernric(Node n, List list) {
+        if (n == null) return;
+        Node n1 = n;
+        Stack stack = new Stack();
+        for (int i=0;n1.hasLeftChild();i++) {
+            stack.push(n1.getLeftNode());
+            //不停压入栈中
+            n1 = n.getLeftNode();
+        }
+        for (n.){
+
+        }
+
+    }*/
 }
